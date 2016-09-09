@@ -12,21 +12,30 @@ public class ConversorDeArquivos {
     @Autowired
     private ConversorDeImagemParaPdf conversorDeImagemParaPdf;
     @Autowired
-    private ConversorDeWordParaPdf conversorDeWordParaPdf;
+    private ConversorDeDocxParaPdf conversorDeDocxParaPdf;
+    @Autowired
+    private ConversorDeDocParaPdf conversorDeDocParaPdf;
 
     public byte[] converterParaPdf(MultipartFile arquivoOriginal) throws Exception {
         if (ehArquivoDeTexto(arquivoOriginal)) {
             return conversorDeTxtParaPdf.converter(arquivoOriginal);
-        } else if (ehArquivoDoWord(arquivoOriginal)) {
-            return conversorDeWordParaPdf.converter(arquivoOriginal);
+        } else if (ehArquivoDocx(arquivoOriginal)) {
+            return conversorDeDocxParaPdf.converter(arquivoOriginal);
+        } else if (ehArquivoDoc(arquivoOriginal)) {
+            return conversorDeDocParaPdf.converter(arquivoOriginal);
         } else {
             return conversorDeImagemParaPdf.converter(arquivoOriginal);
         }
     }
 
-    private boolean ehArquivoDoWord(MultipartFile arquivoOriginal) {
+    private boolean ehArquivoDocx(MultipartFile arquivoOriginal) {
         final String nomeDoArquivo = arquivoOriginal.getOriginalFilename();
-        return nomeDoArquivo.endsWith("doc") || nomeDoArquivo.endsWith("docx");
+        return nomeDoArquivo.endsWith("docx");
+    }
+
+    private boolean ehArquivoDoc(MultipartFile arquivoOriginal) {
+        final String nomeDoArquivo = arquivoOriginal.getOriginalFilename();
+        return nomeDoArquivo.endsWith("doc");
     }
 
     private boolean ehArquivoDeTexto(MultipartFile arquivoOriginal) {

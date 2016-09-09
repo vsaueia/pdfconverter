@@ -11,7 +11,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
 @Component
-public class ConversorDeWordParaPdf implements ConversorDeArquivosParaPdf {
+public class ConversorDeDocxParaPdf implements ConversorDeArquivosParaPdf {
 
     @Override
     public byte[] converter(MultipartFile arquivoOriginal) throws Exception {

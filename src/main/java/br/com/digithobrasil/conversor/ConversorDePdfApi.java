@@ -26,7 +26,7 @@ public class ConversorDePdfApi {
     private ConversorDeArquivos conversorDeArquivos;
 
     @RequestMapping(value = "/converter", method = RequestMethod.POST)
-    public @ResponseBody byte[] converterArquivo(@RequestParam(value = "arquivo", required = true) MultipartFile arquivoOriginal) {
+    public @ResponseBody byte[] converterArquivo(@RequestParam(value = "arquivo", required = true) MultipartFile arquivoOriginal) throws Exception{
         try {
             byte[] pdfConvertido = conversorDeArquivos.converterParaPdf(arquivoOriginal);
 
@@ -36,6 +36,7 @@ public class ConversorDePdfApi {
             return pdfConvertido;
         } catch (Exception e) {
             LOG.error("Error while uploading.", e);
+
         }
         throw new RuntimeException("Não foi possível converter o arquivo");
     }
