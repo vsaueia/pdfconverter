@@ -2,10 +2,10 @@
 Conversor de PDF via API usando Spring Boot
 
 Entradas:
-	- txt (itext) - http://stackoverflow.com/questions/4696463/convert-text-into-pdf
-	- imagens (jpeg, bitmap, png) - iText (http://www.rgagnon.com/javadetails/java-image-to-pdf-using-itext.html)
-	- doc e docx - (POI e iText) - http://stackoverflow.com/questions/6060541/creating-pdf-from-word-doc-using-apache-poi-and-itext-in-java
-
+	- txt (itext) 
+	- imagens (jpeg, bitmap, png) 
+	- doc e docx - (POI e iText) 
+	- 
 Configurações:
  	- resolução de saída (dpi)
  	- nome do arquivo de saída
