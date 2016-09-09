@@ -4,10 +4,10 @@ Conversor de PDF via API usando Spring Boot
 Entradas:
 - txt (itext) 
 - imagens (jpeg, bitmap, png) 
- - doc e docx - (POI e iText) 
+- doc e docx - (POI e iText) 
  
 Configurações:
- - resolução de saída (dpi)
+- resolução de saída (dpi)
 - nome do arquivo de saída
 - permitir junção ou separação dos arquivos
 - multiplas entradas	
